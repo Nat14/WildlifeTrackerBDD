@@ -1,1 +1,22 @@
 <h1>Welcome to the Animal Tracker App</h1>
+
+
+<form action="/species/create" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name">
+  <input type="submit" value="Add Animal"/>
+</form>
+
+
+<form action="/" method="get">
+  <input type="submit" value="Show List of Animal"/>
+</form>
+
+
+<p>
+<ul>Animal List: 
+  <% @species.each do |x| %>
+  <li><%= x.name %></li>
+  <% end %>
+</ul>
+</p>
