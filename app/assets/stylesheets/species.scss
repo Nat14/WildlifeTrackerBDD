@@ -1,3 +1,221 @@
 // Place all the styles related to the Species controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass/css3";
+
+$row-color: #333333;
+
+html,body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font: 1.2em/1.4 'Oswald', sans-serif;
+  color: #fff;
+  text-align: right;
+}
+
+.rolldown-list {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.rolldown-list li {
+  padding: 1em;
+  margin-bottom: .125em;
+  display: block;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.cssanimations .rolldown-list li {
+  visibility: hidden;
+  @include animation(rolldown .7s 1);
+  @include transform-origin(50%, 0);
+  @include animation-fill-mode(forwards);
+}
+
+
+.rolldown-list li:nth-child(2n) {
+  background-color: lighten($row-color, 10%);
+
+}
+.rolldown-list li:nth-child(2n+1) {
+  background-color: $row-color;
+}
+
+
+#myList {
+  position: absolute;
+  width: 30%;
+  left: 60%;
+  margin-left: -25%;
+}
+
+#btnReload {
+  float: right;
+  color: #333;
+  background: #ccc;
+  text-transform: uppercase;
+  border: none;
+  padding: .5em 1em;
+}
+#btnReload:hover {
+  background: #ddd;
+}
+
+
+
+@include keyframes(rolldown) {
+  0% {
+    visibility: visible;
+    @include transform(rotateX( 180deg ) perspective(500px));
+  }
+  70% {
+    visibility: visible;
+    @include transform(rotateX(-20deg));
+  }
+  100% {
+    visibility: visible;
+    @include transform(rotateX(0deg));
+  }
+}
+
+.webdesigntuts-workshop {
+	background: #151515;
+	height: 100%;
+	position: absolute;
+	text-align: left;
+	width: 100%;
+}
+
+.webdesigntuts-workshop:before,
+.webdesigntuts-workshop:after {
+	content: '';
+	display: block;
+	height: 1px;
+	left: 50%;
+	margin: 0 0 0 -400px;
+	position: absolute;
+	width: 300px;
+}
+
+.webdesigntuts-workshop:before {
+	background: #444;
+	background: linear-gradient(left, #151515, #444, #151515);
+	top: 60px;
+}
+
+.webdesigntuts-workshop form {
+	background: #111;
+	background: linear-gradient(#1b1b1b, #111);
+	border: 1px solid #000;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px #272727;
+	display: inline-block;
+	font-size: 0px;
+	margin: 20px 40px 0;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
+}
+
+.webdesigntuts-workshop input {
+	background: #222;
+	background: linear-gradient(#333, #222);
+	border: 1px solid #444;
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0 2px 0 #000;
+	color: #888;
+	display: block;
+	float: left;
+	font-family: 'Cabin', helvetica, arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	height: 40px;
+	margin: 0;
+	padding: 0 10px;
+	text-shadow: 0 -1px 0 #000;
+	width: 200px;
+}
+
+.ie .webdesigntuts-workshop input {
+	line-height: 40px;
+}
+
+.webdesigntuts-workshop input::-webkit-input-placeholder {
+   color: #888;
+}
+
+.webdesigntuts-workshop input:-moz-placeholder {
+   color: #888;
+}
+
+.webdesigntuts-workshop input:focus {
+	animation: glow 800ms ease-out infinite alternate;
+	background: #222922;
+	background: linear-gradient(#333933, #222922);
+	border-color: #393;
+	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	color: #efe;
+	outline: none;
+}
+
+.webdesigntuts-workshop input:focus::-webkit-input-placeholder {
+	color: #efe;
+}
+
+.webdesigntuts-workshop input:focus:-moz-placeholder {
+	color: #efe;
+}
+
+.webdesigntuts-workshop button {
+	background: #222;
+	background: linear-gradient(#333, #222);
+	box-sizing: content-box;
+	border: 1px solid #444;
+	border-left-color: #000;
+	border-radius: 0 5px 5px 0;
+	box-shadow: 0 2px 0 #000;
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: 'Cabin', helvetica, arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-shadow: 0 -1px 0 #000;
+	width: 80px;
+}
+
+.webdesigntuts-workshop button:hover,
+.webdesigntuts-workshop button:focus {
+	background: #292929;
+	background: linear-gradient(#393939, #292929);
+	color: #5f5;
+	outline: none;
+}
+
+.webdesigntuts-workshop button:active {
+	background: #292929;
+	background: linear-gradient(#393939, #292929);
+	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+	top: 1px;
+}
+
+@keyframes glow {
+    0% {
+		border-color: #393;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}

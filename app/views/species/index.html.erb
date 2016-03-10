@@ -1,22 +1,21 @@
-<h1>Welcome to the Animal Tracker App</h1>
 
 
-<form action="/species/create" method="post">
-  <label for="name">Name</label>
-  <input type="text" name="name" id="name">
-  <input type="submit" value="Add Animal"/>
-</form>
-
+<section class="webdesigntuts-workshop">
+  <form action="/species/create" method="post">
+		<input type="text"  name="name" id="name" placeholder="Which animal do you spot?">
+		<button type="submit">Add</button>
+	</form>
+</section>
 
 <form action="/" method="get">
   <input type="submit" value="Show List of Animal"/>
 </form>
 
 
-<p>
-<ul>Animal List: 
+<ul class="rolldown-list" id="myList">
   <% @species.each do |x| %>
   <li><%= x.name %></li>
   <% end %>
 </ul>
-</p>
+<%# TODO: this does not work. Click this button, the list will animate %>
+<button id="btnReload">Reload</button>
