@@ -3,26 +3,25 @@ require 'rails_helper'
 RSpec.feature "AddAnimals", type: :feature do
   it "Story: As a ranger I can go to a home page." do
     visit '/'
-    expect(page).to have_content("Welcome to the Animal Tracker App")
+    expect(page).to have_content("Wildlife Tracker App")
   end
 
   it "Story: As a ranger I can create an animal" do
     visit "/"
-    expect(page).to have_field("Name")
+    expect(page).to have_field("name")
   end
 
   it "Story: And it goes back the home page." do
     visit "/"
-    fill_in("Name", with: "tiger")
-    click_button "Add Animal"
-    expect(page).to have_content("Welcome to the Animal Tracker App")
+    fill_in("name", with: "tiger")
+    click_button "Add"
+    expect(page).to have_content("Wildlife Tracker App")
   end
 
   it "Story: As a ranger I can list all animals in a database." do
     visit "/"
-    fill_in("Name", with: "tiger")
-    click_button "Add Animal"
-    click_button "Show List of Animal"
+    fill_in("name", with: "tiger")
+    click_button "Add"
     expect(page).to have_content("tiger")
   end
 
