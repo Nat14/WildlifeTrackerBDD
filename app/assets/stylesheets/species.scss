@@ -11,7 +11,7 @@ html,body {
 }
 
 body {
-  font: 1.2em/1.4 'Oswald', sans-serif;
+  font: 1em 'Oswald', sans-serif;
   color: #fff;
   text-align: right;
 }
@@ -48,10 +48,9 @@ body {
 
 
 #myList {
-  position: absolute;
-  width: 30%;
-  left: 60%;
-  margin-left: -25%;
+  width: 345px;
+  margin-left: 40px;
+  margin-top: 20px;
 }
 
 #btnReload {
@@ -62,11 +61,10 @@ body {
   border: none;
   padding: .5em 1em;
 }
+
 #btnReload:hover {
   background: #ddd;
 }
-
-
 
 @include keyframes(rolldown) {
   0% {
@@ -91,23 +89,6 @@ body {
 	width: 100%;
 }
 
-.webdesigntuts-workshop:before,
-.webdesigntuts-workshop:after {
-	content: '';
-	display: block;
-	height: 1px;
-	left: 50%;
-	margin: 0 0 0 -400px;
-	position: absolute;
-	width: 300px;
-}
-
-.webdesigntuts-workshop:before {
-	background: #444;
-	background: linear-gradient(left, #151515, #444, #151515);
-	top: 60px;
-}
-
 .webdesigntuts-workshop form {
 	background: #111;
 	background: linear-gradient(#1b1b1b, #111);
@@ -116,7 +97,7 @@ body {
 	box-shadow: inset 0 0 0 1px #272727;
 	display: inline-block;
 	font-size: 0px;
-	margin: 20px 40px 0;
+	margin: 40px 40px 0;
 	padding: 20px;
 	position: relative;
 	z-index: 1;
