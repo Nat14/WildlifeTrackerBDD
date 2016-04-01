@@ -5,14 +5,15 @@
   <form action="/species/create" method="post">
 		<input type="text"  name="name" id="name" placeholder="Which animal do you spot?">
 		<button type="submit">Add</button>
+
 	</form>
 
 
-<ul class="rolldown-list" id="myList">
+<ul class="rolldown-list" id="myList"><button id="btnReload">Reload</button>
   <% @species.each do |x| %>
   <li><%= x.name %></li>
   <% end %>
 </ul>
 <%# TODO: this does not work. Click this button, the list will animate %>
-<!-- <button id="btnReload">Reload</button> -->
+
 </section>
